@@ -8,16 +8,20 @@
 </head>
 <body>
     <header>
-        <h1>FOTO IMAGE LIST</h1>
+        <h1 class="gallery-title">Галерея</h1>
     </header>
     <main>
         <div id="gallery" class="gallery"></div>
-        <div class="buttons">
-            <button id="loadMore">Завантажити ще 4 картинки</button>
-            <button id="clearGallery">Очистити галерею</button>
-            <button id="removeLast">Видалити останню картинку</button>
-            <button id="reverseGallery">Перевернути галерею</button>
-            <button id="shuffleGallery">Перемішати галерею</button>
+            <div class="buttons">
+                <button id="loadMore" class="gallery-btn" onclick="getNextPhotos()">Завантажити ще 4 картинки</button>
+                <button id="clearGallery" class="gallery-btn" onclick="clearGallery()">Очистити галерею</button>
+                <button id="removeLast" class="gallery-btn" onclick="deleteLastPhoto()">Видалити останню картинку</button>
+                <button id="reverseGallery" class="gallery-btn" onclick="reverseGallery()">Перевернути галерею</button>
+                <button id="shuffleGallery" class="gallery-btn" onclick="shuffleGallery()">Перемішати галерею</button>
+            </div>
+            <div id="gallery-id" class="gallery-container">
+            
+            </div>
         </div>
     </main>
     <script src="script.js"></script>

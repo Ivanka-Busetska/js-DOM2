@@ -1,1 +1,202 @@
-"Enter your styles here"
+html {
+    background: linear-gradient(
+    -45deg,
+    #1c1f26,
+    #252933,
+    #2e3340,
+    #383f4d,
+    #424b59,
+    #3a3f47,
+    #2b2e35,
+    #1e2026
+);
+
+
+
+    background-size: 400% 400%;
+	animation: gradient 9s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.gallery-title {
+  font-family: sans-serif;
+  margin: 10px;
+  color:chocolate;
+}
+
+.buttons {
+  display: flex;
+  margin: 10px;
+}
+
+.gallery-card {
+  width: 400px;
+  height: auto;
+  border: 12px solid #515755;
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  background: #000; /* fallback */
+  margin: 4px
+}
+
+.gallery-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  backdrop-filter: blur(30px) saturate(220%);
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.01) 30%,
+    rgba(255, 255, 255, 0.03) 50%,
+    rgba(255, 255, 255, 0.08) 70%,
+    rgba(255, 255, 255, 0.15) 85%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.1) 40%,
+    rgba(0, 0, 0, 0.5) 55%,
+    black 75%
+  );
+}
+
+.gallery-card__media {
+  margin: 0;
+}
+.gallery-card__photo {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.gallery-card__body {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  color: #ddd;
+  z-index: 1;
+}
+
+.gallery-card__header {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.gallery-card__name {
+  font-size: 1.6rem;
+  line-height: 1.1;
+  font-weight: 600;
+}
+.gallery-card__badge {
+  width: 24px;
+  height: 24px;
+}
+.gallery-card__description {
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.gallery-card__footer {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.gallery-card__stats {
+  display: flex;
+  gap: 16px;
+}
+
+.gallery-card__stat {
+  display: flex;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  gap: 4px;
+  font-size: 0.975rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+  padding: 0.3rem 0.71rem;
+  color: #222222;
+}
+.gallery-card__stat-value {
+  font-weight: 600;
+}
+
+.gallery-card__actions {
+  display: flex;
+  align-items: center;
+}
+.gallery-btn {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #222222;
+  border-radius: 40px;
+  font-family: inherit;
+  font-size: 1.2rem;
+  display: flex;
+  line-height: 1;
+  align-items: center;
+  gap: 4px;
+  padding: 0.5rem 0.8rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background 0.2s ease, transform 0.3s ease;
+}
+.gallery-btn:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+}
+.gallery-btn:active {
+  transform: translateY(1px);
+}
+.gallery-btn:focus-visible {
+  outline: 2px solid #333;
+  outline-offset: 3px;
+}
+.gallery-btn svg {
+  width: 32px;
+  height: 32px;
+}
+
+@media (max-width: 480px) {
+  .gallery-card {
+    width: 320px;
+    height: 520px;
+    border-width: 10px;
+  }
+  .gallery-card__name {
+    font-size: 1.4rem;
+  }
+  .gallery-card__description {
+    font-size: 1.05rem;
+  }
+  .gallery-btn {
+    font-size: 1.05rem;
+  }
+}
